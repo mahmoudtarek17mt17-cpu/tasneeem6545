@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>For tasnem ❤️</title>
+
+<style>
+body{
+    background:#ffdbe8;
+    text-align:center;
+    font-family:Arial;
+    margin:0;
+    padding:30px;
+    overflow:hidden;
+}
+
+h1{
+    color:#d63384;
+    margin-bottom:20px;
+}
+
+img{
+    border-radius:20px;
+}
+
+#mainPic{
+    width:220px;
+    margin-bottom:25px;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    font-size:22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yesBtn{
+    background:green;
+    color:white;
+    margin-right:20px;
+}
+
+#noBtn{
+    background:red;
+    color:white;
+}
+
+#page2{
+    display:none;
+}
+
+#finalPic{
+    width:250px;
+    margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<div id="page1">
+    <h1>ممكن تبقي ليا لوحدي ونتزوج يكوتي ؟ ❤️</h1>
+
+    <img id="mainPic" src="main.jpg">
+
+    <br>
+
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<div id="page2">
+    <h1>
+  بحبك خالص ي انسة تسنيم <br>
+    انتي احلي حاجة حصلت ليا <br> ❤
+    </h1>
+
+    <img id="finalPic" src="final.jpg">
+</div>
+
+<script>
+let yesSize = 1;
+let noSize = 1;
+
+document.getElementById("noBtn").onclick = function(){
+    yesSize += 0.2;
+    noSize -= 0.1;
+
+    document.getElementById("yesBtn").style.transform =
+    `scale(${yesSize})`;
+
+    document.getElementById("noBtn").style.transform =
+    `scale(${noSize})`;
+
+    if(noSize < 0.3){
+        document.getElementById("noBtn").style.display = "none";
+    }
+};
+
+document.getElementById("yesBtn").onclick = function(){
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+};
+</script>
+
+</body>
+</html>
